@@ -4,7 +4,7 @@ import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="mainMargin pb-10">
+    <footer className="my-4 px-4 xsm:px-6 md:px-8 max-w-6xl mx-auto w-full pb-10">
       <div className="mt-16 grid gap-8 rounded-3xl border border-neutral-200 bg-gradient-to-br from-green-900 via-emerald-800 to-amber-700 px-6 py-10 text-white shadow-lg dark:border-neutral-700 dark:from-neutral-950 dark:via-emerald-950 dark:to-amber-900 md:grid-cols-[1.2fr_1fr] md:px-10 md:py-14">
         <div className="flex flex-col gap-6">
           <h2 className="bolded text-3xl sm:text-4xl">Stay ahead of every fresh press</h2>
@@ -60,28 +60,28 @@ export default function Footer() {
         <div>
           <h4 className="text-sm font-semibold uppercase tracking-wide text-neutral-900 dark:text-neutral-200">Company</h4>
           <ul className="mt-4 space-y-3 text-sm text-neutral-600 dark:text-neutral-300">
-            <li className="Links">About Graferd</li>
-            <li className="Links">Sourcing Standards</li>
-            <li className="Links">Wholesale Program</li>
-            <li className="Links">Careers</li>
+            <li className="hover:underline underline-offset-4 cursor-pointer">About Graferd</li>
+            <li className="hover:underline underline-offset-4 cursor-pointer">Sourcing Standards</li>
+            <li className="hover:underline underline-offset-4 cursor-pointer">Wholesale Program</li>
+            <li className="hover:underline underline-offset-4 cursor-pointer">Careers</li>
           </ul>
         </div>
         <div>
           <h4 className="text-sm font-semibold uppercase tracking-wide text-neutral-900 dark:text-neutral-200">Support</h4>
           <ul className="mt-4 space-y-3 text-sm text-neutral-600 dark:text-neutral-300">
-            <li className="Links">Customer Helpdesk</li>
-            <li className="Links">Delivery & Logistics</li>
-            <li className="Links">Quality Assurance</li>
-            <li className="Links">Returns Policy</li>
+            <li className="hover:underline underline-offset-4 cursor-pointer">Customer Helpdesk</li>
+            <li className="hover:underline underline-offset-4 cursor-pointer">Delivery & Logistics</li>
+            <li className="hover:underline underline-offset-4 cursor-pointer">Quality Assurance</li>
+            <li className="hover:underline underline-offset-4 cursor-pointer">Returns Policy</li>
           </ul>
         </div>
         <div>
           <h4 className="text-sm font-semibold uppercase tracking-wide text-neutral-900 dark:text-neutral-200">Resources</h4>
           <ul className="mt-4 space-y-3 text-sm text-neutral-600 dark:text-neutral-300">
-            <li className="Links">Nutritional Guide</li>
-            <li className="Links">Chef Recipes</li>
-            <li className="Links">Bulk Order Checklist</li>
-            <li className="Links">FAQ</li>
+            <li className="hover:underline underline-offset-4 cursor-pointer">Nutritional Guide</li>
+            <li className="hover:underline underline-offset-4 cursor-pointer">Chef Recipes</li>
+            <li className="hover:underline underline-offset-4 cursor-pointer">Bulk Order Checklist</li>
+            <li className="hover:underline underline-offset-4 cursor-pointer">FAQ</li>
           </ul>
         </div>
       </div>
@@ -89,12 +89,11 @@ export default function Footer() {
       <div className="mt-12 flex flex-col gap-4 border-t border-neutral-200 pt-6 text-sm text-neutral-600 dark:border-neutral-800 dark:text-neutral-300 sm:flex-row sm:items-center sm:justify-between">
         <p>Graferd Farms © {new Date().getFullYear()} — All rights reserved.</p>
         <div className="flex gap-4">
-          <span className="Links">Privacy Policy</span>
-          <span className="Links">Terms of Service</span>
-          <span className="Links">Cookies</span>
+          <span className="hover:underline underline-offset-4 cursor-pointer">Privacy Policy</span>
+          <span className="hover:underline underline-offset-4 cursor-pointer">Terms of Service</span>
+          <span className="hover:underline underline-offset-4 cursor-pointer">Cookies</span>
         </div>
       </div>
     </footer>
   );
 }
-

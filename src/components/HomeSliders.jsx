@@ -11,7 +11,7 @@ export default function HomeSliders({ text, type, del = "no", id }) {
   const typeLabel = typeof type === "string" ? type.toUpperCase() : "";
 
   return (
-    <section className="mainMargin pt-16">
+    <section className="my-4 px-4 xsm:px-6 md:px-8 max-w-6xl mx-auto w-full pt-16">
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}

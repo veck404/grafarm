@@ -82,7 +82,7 @@ export default function Home({ to = "" }) {
 
   return (
     <>
-      <section className="mainPadding pt-10">
+      <section className="p-4 xsm:px-6 md:px-8 pb-0 max-w-6xl mx-auto w-full pt-10">
         <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-lime-50 via-white to-amber-50 px-6 py-12 shadow-lg dark:from-emerald-950/40 dark:via-neutral-950 dark:to-amber-900/30 md:px-12 md:py-16">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -205,7 +205,7 @@ export default function Home({ to = "" }) {
         </div>
       </section>
 
-      <section className="mainMargin mt-16">
+      <section className="my-4 px-4 xsm:px-6 md:px-8 max-w-6xl mx-auto w-full mt-16">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -232,7 +232,7 @@ export default function Home({ to = "" }) {
         </motion.div>
       </section>
 
-      <section className="mainMargin mt-16">
+      <section className="my-4 px-4 xsm:px-6 md:px-8 max-w-6xl mx-auto w-full mt-16">
         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 0.55 }}>
           <p className="text-sm uppercase tracking-[0.4em] text-green-700 dark:text-emerald-300">Why Graferd</p>
           <h2 className="bolded mt-3 text-3xl text-green-900 sm:text-4xl dark:text-green-200">From harvest to bottle, quality leads the way</h2>
@@ -261,7 +261,7 @@ export default function Home({ to = "" }) {
         </div>
       </section>
 
-      <section className="mainMargin mt-20">
+      <section className="my-4 px-4 xsm:px-6 md:px-8 max-w-6xl mx-auto w-full mt-20">
         <div className="overflow-hidden rounded-3xl border border-neutral-200 bg-gradient-to-br from-white via-lime-50 to-amber-50 px-6 py-12 shadow-lg dark:border-neutral-800 dark:from-neutral-950 dark:via-emerald-950/30 dark:to-amber-900/20 md:px-10">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 0.55 }}>
             <p className="text-sm uppercase tracking-[0.4em] text-green-700 dark:text-emerald-300">Our Journey</p>

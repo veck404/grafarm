@@ -13,7 +13,7 @@ export default function Shop() {
 
   return (
     <div className="pb-20">
-      <section className="mainMargin mt-12">
+      <section className="my-4 px-4 xsm:px-6 md:px-8 max-w-6xl mx-auto w-full mt-12">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -23,7 +23,7 @@ export default function Shop() {
           <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             <div>
               <div className="flex items-center gap-3 text-sm text-neutral-600 dark:text-neutral-400">
-                <Link to="/" className="Links text-neutral-500 dark:text-neutral-400">
+                <Link to="/" className="hover:underline underline-offset-4 cursor-pointer text-neutral-500 dark:text-neutral-400">
                   Home
                 </Link>
                 <IoIosArrowForward />

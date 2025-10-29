@@ -61,14 +61,14 @@ export default function Prodcut() {
 
   return (
     <>
-      <div className='flex my-5 mainMargin items-center gap-4'>
+      <div className='flex my-5 items-center gap-4 px-4 xsm:px-6 md:px-8 max-w-6xl mx-auto w-full'>
         <Link to='/' className='text-gray-400'>Home</Link>
         <IoIosArrowForward color='gray'/>
         <Link to='/Shop' className='text-gray-400'>Shop</Link>
         <IoIosArrowForward color='gray'/>
         <p className=''>{MyProdcut.name}</p>
       </div>
-      <div className='flex flex-wrap justify-center gap-x-10 mainMargin h-fit'>
+      <div className='flex flex-wrap justify-center gap-x-10 px-4 xsm:px-6 md:px-8 max-w-6xl mx-auto w-full h-fit'>
                 <div className='bg-gray-100 dark:bg-neutral-800 flex-grow rounded-xl flex justify-center '>
           <Img className='w-[80%] aspect-square object-contain' src={MyProdcut.src} alt='' />
         </div>

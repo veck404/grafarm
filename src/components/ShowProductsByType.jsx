@@ -209,8 +209,8 @@ export default function ShowProductsByType({MyProducts}) {
   }
 
     return (
-    <div className='flex flex-wrap shop:flex-nowrap mainMargin gap-5'>
-      <div className='hidden p-4 flex-grow gap-5 rounded-xl h-fit border-4 flex flex-col shop:max-w-[300px] shop:min-w-[300px]'>
+    <div className='flex flex-wrap shop:flex-nowrap my-4 px-4 xsm:px-6 md:px-8 max-w-6xl mx-auto w-full gap-5'>
+      <div className='hidden p-4 flex-grow gap-5 rounded-xl h-fit border-4 flex-col shop:flex shop:max-w-[300px] shop:min-w-[300px]'>
 
         <div onClick={()=>setArrows({type:'filter'})} className='select-none cursor-pointer flex justify-between'>
           <p className='font-bold text-2xl'>Filters</p>
@@ -280,7 +280,7 @@ export default function ShowProductsByType({MyProducts}) {
                   </motion.div>
                 }
                 <div onClick={()=>handleFiltersChange('price',PriceRange)} className='flex justify-center items-center'>
-                  <button className='btn flex justify-center items-center'>Aply</button>
+                  <button className='bg-black text-white py-3 px-16 rounded-3xl flex justify-center items-center'>Aply</button>
                 </div>
           </div>
           <div className=' flex-col gap-3'>

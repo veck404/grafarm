@@ -43,11 +43,11 @@ export default function Cart() {
     // empty the cart
     // AddToCart([],setCart,setCost,0,'empty')
     return(
-      <div className="mainMargin flex-col-reverse lg:flex-row flex items-center">
+      <div className="my-4 px-4 xsm:px-6 md:px-8 max-w-6xl mx-auto w-full flex-col-reverse lg:flex-row flex items-center">
                 <div className="text-center flex flex-col items-center gap-5">
             <h1 className="bolded text-4xl xsm:text-5xl">Thank You for Your Purchase!</h1>
             <p>Must add items on the card before you proceed to checkout</p>
-            <div className="p-4"><Link className="btn w-fit" to='/Shop'>Go to Shop</Link></div>
+            <div className="p-4"><Link className="bg-black text-white py-3 px-16 rounded-3xl w-fit" to='/Shop'>Go to Shop</Link></div>
         </div>
 
           <motion.div
@@ -62,11 +62,11 @@ export default function Cart() {
 
   if(!Cost){
     return (
-      <div className="mainMargin flex-col-reverse lg:flex-row flex items-center">
+      <div className="my-4 px-4 xsm:px-6 md:px-8 max-w-6xl mx-auto w-full flex-col-reverse lg:flex-row flex items-center">
                 <div className="text-center flex flex-col items-center gap-5">
           <h1 className="bolded text-4xl xsm:text-5xl">Your Cart is Empty!</h1>
           <p>Must add items on the card before you proceed to checkout</p>
-          <div className="p-4"><Link className="btn w-fit" to='/Shop'>Go to Shop</Link></div>
+          <div className="p-4"><Link className="bg-black text-white py-3 px-16 rounded-3xl w-fit" to='/Shop'>Go to Shop</Link></div>
         </div>
 
           <motion.div
@@ -79,7 +79,7 @@ export default function Cart() {
     )
   } 
   return (
-    <div className="mainMargin">
+    <div className="my-4 px-4 xsm:px-6 md:px-8 max-w-6xl mx-auto w-full">
       
       <div className='flex my-5 items-center gap-4'>
         <Link to='/' className='text-gray-400'>Home</Link>
@@ -139,14 +139,14 @@ export default function Cart() {
                 <div title="Moemen" className="absolute translate-y-4 translate-x-4"><MdOutlineDiscount size={20}/></div>
                 <form onSubmit={handlePromoCode} className="flex flex-wrap gap-5">
                   <input ref={DiscountRef} className="flex-grow bg-gray-100 rounded-full py-3 pl-10 outline-none" placeholder="Add promo code" type="text" />
-                  <button className="btn text-center sm:flex-grow-0 flex-grow" type="submit">Apply</button>
+                  <button className="bg-black text-white py-3 px-16 rounded-3xl text-center sm:flex-grow-0 flex-grow" type="submit">Apply</button>
                 </form>
                 {CorrectDiscount===false && <p className="font-bold mt-5 text-center text-red-600">Wrong promo code please try again!</p>}
                 {CorrectDiscount==='Yet' && <p className="font-bold mt-5 text-center">Use promo code Moemen for 20% discount</p>}
                 {CorrectDiscount===true && <p className="font-bold mt-5 text-center text-green-600">Promo code applied successfully</p>}
               </div>
               <div className="flex mt-5 mb-5">
-                <Link className="btn flex-grow text-center" onClick={()=>{
+                <Link className="bg-black text-white py-3 px-16 rounded-3xl flex-grow text-center" onClick={()=>{
                   AddToCart([],setCart,setCost,0,'empty')
                   setCheckout(true)
                 }}>Go to Checkout</Link>
