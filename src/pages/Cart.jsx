@@ -10,39 +10,15 @@ import Img from "../components/Img"
 
 const WHATSAPP_NUMBER = "2347017567105";
 
-const readCartFromStorage = () => {
-  if (typeof window === "undefined") {
-    return [];
-  }
-
-  try {
-    const stored = window.localStorage.getItem("cart");
-    if (!stored) {
-      return [];
-    }
-
-    const parsed = JSON.parse(stored);
-    return Array.isArray(parsed) ? parsed : [];
-  } catch (error) {
-    console.warn("Unable to read cart from storage:", error);
-    return [];
-  }
-};
-
 export default function Cart() {
-  const { Cart, setCart, Cost, setCost } = useContext(CartCtx);
+  const { setCart, Cost, setCost, Items, setItems } = useContext(CartCtx);
   const [Discount, setDiscount] = useState(0);
   const [CorrectDiscount, setCorrectDiscount] = useState("Yet");
-  const [cartItems, setCartItems] = useState(readCartFromStorage);
   const DiscountRef = useRef();
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
-
-  useEffect(() => {
-    setCartItems(readCartFromStorage());
-  }, [Cart, Cost]);
 
   const handlePromoCode = (e) => {
     e.preventDefault();
@@ -65,12 +41,11 @@ export default function Cart() {
   const total = deliveryFee + subtotal - discountAmount;
 
   const handleCheckout = () => {
-    const items = readCartFromStorage();
-    if (!items.length) {
+    if (!Items.length) {
       return;
     }
 
-    const orderLines = items
+    const orderLines = Items
       .map((item, index) => {
         const attributes = [item.size && `Size: ${item.size}`, item.color && `Color: ${item.color}`]
           .filter(Boolean)
@@ -108,7 +83,7 @@ export default function Cart() {
     }
   };
 
-  if (!cartItems.length) {
+  if (!Items.length) {
     return (
       <div className="my-4 px-4 xsm:px-6 md:px-8 max-w-6xl mx-auto w-full flex-col-reverse lg:flex-row flex items-center">
                 <div className="text-center flex flex-col items-center gap-5">
@@ -136,10 +111,10 @@ export default function Cart() {
       </div>
       <h1 className="bolded text-3xl xsm:text-4xl">Your Cart</h1>
       <div className="mt-10 flex flex-wrap gap-5">
-        <motion.div key={cartItems.length} className="flex flex-grow-huge h-fit flex-col rounded-xl border-2 p-5">
+        <motion.div key={Items.length} className="flex flex-grow-huge h-fit flex-col rounded-xl border-2 p-5">
             <AnimatePresence>
             {
-              cartItems.map((item, index) => {
+              Items.map((item, index) => {
                 return (
                   <AnimatePresence key={index} mode="wait">
                     <motion.div
@@ -149,8 +124,8 @@ export default function Cart() {
                       key="modal"
                       transition={{type:'just',delay:0.1*index}}
                         >
-                      <CartLayout setCart={setCart} setCost={setCost} item={item}/>
-                      {index+1!==cartItems.length && <hr className="my-5"/>}
+                      <CartLayout setCart={setCart} setCost={setCost} setItems={setItems} item={item}/>
+                      {index+1!==Items.length && <hr className="my-5"/>}
                     </motion.div>
                   </AnimatePresence>
                 )

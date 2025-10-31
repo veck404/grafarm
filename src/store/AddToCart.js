@@ -31,13 +31,14 @@ const calculateSummary = (cart) => {
   );
 };
 
-export default function AddToCart(arr, setCart, setCost, num = 0, type = "add") {
+export default function AddToCart(arr, setCart, setCost, num = 0, type = "add", setItems) {
   if (typeof window === "undefined") {
     return [];
   }
 
   if (type === "empty") {
     window.localStorage.setItem("cart", JSON.stringify([]));
+    setItems?.([]);
     setCart?.(0);
     setCost?.(0);
     return [];
@@ -61,10 +62,13 @@ export default function AddToCart(arr, setCart, setCost, num = 0, type = "add") 
     cart.push({ ...arr, Quantity: delta });
   }
 
-  const { count, cost } = calculateSummary(cart);
-
-  setCart?.(count);
-  setCost?.(cost);
+  if (setItems) {
+    setItems(cart);
+  } else {
+    const { count, cost } = calculateSummary(cart);
+    setCart?.(count);
+    setCost?.(cost);
+  }
 
   window.localStorage.setItem("cart", JSON.stringify(cart));
 

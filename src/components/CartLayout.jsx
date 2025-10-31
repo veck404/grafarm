@@ -5,13 +5,13 @@ import AddToCart from '../store/AddToCart';
 import Img from './Img';
 
 
-export default function CartLayout({item,setCart,setCost}) {
+export default function CartLayout({item,setCart,setCost,setItems}) {
   const [ ShowName, setShowName ] = useState(false)
   const handleQuantityChange = (num)=>{
-    AddToCart(item,setCart,setCost,num)
+    AddToCart(item,setCart,setCost,num,'add',setItems)
   }
   const handleDelete = ()=>{
-    AddToCart(item,setCart,setCost,-item.Quantity)
+    AddToCart(item,setCart,setCost,-item.Quantity,'add',setItems)
   }
   return (
     <div className=' gap-y-10 flex-wrap flex justify-between'>

@@ -38,6 +38,8 @@ export const CartCtx = createContext({
   setCart: () => {},
   Cost: 0,
   setCost: () => {},
+  Items: [],
+  setItems: () => {},
 });
 
 export default function CartContext({ children }) {
@@ -45,21 +47,30 @@ export default function CartContext({ children }) {
 
   if (!initialSnapshot.current) {
     const storedItems = getStoredCartItems();
-    initialSnapshot.current = calculateTotals(storedItems);
+    initialSnapshot.current = {
+      items: storedItems,
+      totals: calculateTotals(storedItems),
+    };
   }
 
-  const [Cart, setCart] = useState(initialSnapshot.current.count);
-  const [Cost, setCost] = useState(initialSnapshot.current.cost);
+  const [Items, setItemsState] = useState(initialSnapshot.current.items);
+  const [Cart, setCart] = useState(initialSnapshot.current.totals.count);
+  const [Cost, setCost] = useState(initialSnapshot.current.totals.cost);
 
   useEffect(() => {
     if (typeof window === "undefined") {
       return;
     }
 
-    if (!window.localStorage.getItem("cart")) {
-      window.localStorage.setItem("cart", JSON.stringify([]));
-    }
-  }, []);
+    window.localStorage.setItem("cart", JSON.stringify(Items));
+  }, [Items]);
 
-  return <CartCtx.Provider value={{ Cart, setCart, Cost, setCost }}>{children}</CartCtx.Provider>;
+  const syncItems = (nextItems) => {
+    setItemsState(nextItems);
+    const { count, cost } = calculateTotals(nextItems);
+    setCart(count);
+    setCost(cost);
+  };
+
+  return <CartCtx.Provider value={{ Cart, setCart, Cost, setCost, Items, setItems: syncItems }}>{children}</CartCtx.Provider>;
 }
