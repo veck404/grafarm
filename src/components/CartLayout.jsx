@@ -34,10 +34,10 @@ export default function CartLayout({ item }) {
         </div>
         <div className='relative flex-grow cart2:flex-grow-0 items-end flex flex-col justify-end'>
         <FaRegTrashAlt onClick={handleDelete} size={20} color='red' className='cursor-pointer absolute -top-10 cart2:top-0 right-0 font-extrabold '/>
-          <div className='rounded-full w-full select-none xsm:p-0 flex justify-center items-center gap-5 bg-gray-100'>
-            <span onClick={()=>handleQuantityChange(-1)} className='text-4xl -mt-1 px-3 py-1 flex-grow cursor-pointer text-center'>-</span>
-            <span className='font-bold'>{item.Quantity}</span>
-            <span onClick={()=>handleQuantityChange(1)} className='text-4xl -mt-1 px-3 py-1 flex-grow cursor-pointer text-center'>+</span>
+          <div className='rounded-full w-full select-none xsm:p-0 flex justify-center items-center gap-5 bg-gray-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 shadow-sm transition dark:shadow-none'>
+            <span onClick={()=>handleQuantityChange(-1)} className='text-4xl -mt-1 px-3 py-1 flex-grow cursor-pointer text-center text-neutral-800 hover:bg-neutral-200 rounded-full dark:text-neutral-100 dark:hover:bg-neutral-700'>-</span>
+            <span className='font-bold text-neutral-900 dark:text-neutral-100'>{item.Quantity}</span>
+            <span onClick={()=>handleQuantityChange(1)} className='text-4xl -mt-1 px-3 py-1 flex-grow cursor-pointer text-center text-neutral-800 hover:bg-neutral-200 rounded-full dark:text-neutral-100 dark:hover:bg-neutral-700'>+</span>
           </div>
         </div>
     </div>

@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { FaStar } from "react-icons/fa";
-import { MdVerified } from "react-icons/md";
+import { MdVerified, MdTouchApp } from "react-icons/md";
 import { SiteReviews as reviews } from "../store/Constants";
 
 export default function HappyCustomers() {
@@ -24,9 +24,28 @@ export default function HappyCustomers() {
               From family kitchens to large-scale caterers, see how Graferd Farms palm oil elevates signature recipes across Nigeria.
             </p>
           </div>
-          <div className="flex items-center gap-2 text-sm font-medium text-green-700 dark:text-emerald-300">
-            <span className="flex h-2 w-2 rounded-full bg-green-600 dark:bg-emerald-400" />
-            Drag to explore stories
+          <div className="flex items-center gap-3 text-sm font-medium text-green-700 dark:text-emerald-300">
+            <motion.span
+              initial={{ opacity: 0, scale: 0.6, rotate: -12 }}
+              animate={{ opacity: 1, scale: 1, rotate: 0 }}
+              transition={{ duration: 0.6, repeat: Infinity, repeatType: "reverse", repeatDelay: 2 }}
+              className="flex h-2 w-2 rounded-full bg-green-600 dark:bg-emerald-400"
+            />
+            <span>Drag to explore stories</span>
+            <motion.span
+              initial={{ scale: 0.85, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+              className="flex h-8 w-8 items-center justify-center rounded-full bg-green-700/10 text-green-700 backdrop-blur-sm dark:bg-emerald-400/10 dark:text-emerald-300"
+            >
+              <motion.span
+                animate={{ y: [0, 4, 0] }}
+                transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
+                className="flex"
+              >
+                <MdTouchApp size={18} />
+              </motion.span>
+            </motion.span>
           </div>
         </div>
         <div className="mt-10 overflow-hidden" ref={ref}>
