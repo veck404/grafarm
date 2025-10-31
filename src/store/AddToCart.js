@@ -1,45 +1,72 @@
-export default function AddToCart (arr,setCart,setCost,num=0,type='add' ){
-  if(type==='empty'){
-    localStorage.setItem('cart',JSON.stringify([]))
-    setCart(0)
-    setCost(0)
-    return []
+const loadCart = () => {
+  if (typeof window === "undefined") {
+    return [];
   }
 
-  // get the cart from local storage
-  let cart = localStorage.getItem('cart')
-  // if the cart is empty
-  if(!cart){
-    // create a new cart
-    cart = []
-  }
-  else{
-    // parse the cart
-    cart = JSON.parse(cart)
-  }
-  // check if the product is already in the cart
-  const index = cart.findIndex(e=> e.id === arr.id && e.color === arr.color && e.size === arr.size)
-  num = num === 0 ? arr.Quantity : num
-  // if the product is in the cart
-  if(index !== -1){
-    // update the quantity
-    cart[index].Quantity += num;
-    // if the quantity is less than 1
-    if(cart[index].Quantity < 1){
-      // remove the product from the cart
-      cart.splice(index,1)
+  try {
+    const stored = window.localStorage.getItem("cart");
+    if (!stored) {
+      return [];
     }
+
+    const parsed = JSON.parse(stored);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (error) {
+    console.warn("Failed to parse cart from storage:", error);
+    return [];
   }
-  else{
-    // add the product to the cart
-    cart.push(arr)
-    
+};
+
+const calculateSummary = (cart) => {
+  return cart.reduce(
+    (acc, item) => {
+      const quantity = Number(item?.Quantity || 0);
+      const cost = Number(item?.cost || 0);
+      return {
+        count: acc.count + quantity,
+        cost: acc.cost + quantity * cost,
+      };
+    },
+    { count: 0, cost: 0 }
+  );
+};
+
+export default function AddToCart(arr, setCart, setCost, num = 0, type = "add") {
+  if (typeof window === "undefined") {
+    return [];
   }
 
-  setCart(cart.length);
-  setCost(cart.reduce((holder, a) => holder + a.cost*a.Quantity,0));
-  // save the cart to local storage
-  localStorage.setItem('cart', JSON.stringify(cart))
-  // return the updated cart
-  return cart
+  if (type === "empty") {
+    window.localStorage.setItem("cart", JSON.stringify([]));
+    setCart?.(0);
+    setCost?.(0);
+    return [];
+  }
+
+  const cart = loadCart();
+
+  if (!arr) {
+    return cart;
+  }
+
+  const index = cart.findIndex((item) => item.id === arr.id && item.color === arr.color && item.size === arr.size);
+  const delta = num === 0 ? Number(arr.Quantity || 0) : num;
+
+  if (index !== -1) {
+    cart[index].Quantity += delta;
+    if (cart[index].Quantity < 1) {
+      cart.splice(index, 1);
+    }
+  } else if (delta > 0) {
+    cart.push({ ...arr, Quantity: delta });
+  }
+
+  const { count, cost } = calculateSummary(cart);
+
+  setCart?.(count);
+  setCost?.(cost);
+
+  window.localStorage.setItem("cart", JSON.stringify(cart));
+
+  return cart;
 }

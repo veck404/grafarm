@@ -10,11 +10,30 @@ import Img from "../components/Img"
 
 const WHATSAPP_NUMBER = "2347017567105";
 
+const readCartFromStorage = () => {
+  if (typeof window === "undefined") {
+    return [];
+  }
+
+  try {
+    const stored = window.localStorage.getItem("cart");
+    if (!stored) {
+      return [];
+    }
+
+    const parsed = JSON.parse(stored);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (error) {
+    console.warn("Unable to read cart from storage:", error);
+    return [];
+  }
+};
+
 export default function Cart() {
   const { Cart, setCart, Cost, setCost } = useContext(CartCtx);
   const [Discount, setDiscount] = useState(0);
   const [CorrectDiscount, setCorrectDiscount] = useState("Yet");
-  const [cartItems, setCartItems] = useState(() => JSON.parse(localStorage.getItem("cart") || "[]"));
+  const [cartItems, setCartItems] = useState(readCartFromStorage);
   const DiscountRef = useRef();
 
   useEffect(() => {
@@ -22,7 +41,7 @@ export default function Cart() {
   }, [])
 
   useEffect(() => {
-    setCartItems(JSON.parse(localStorage.getItem("cart") || "[]"));
+    setCartItems(readCartFromStorage());
   }, [Cart, Cost]);
 
   const handlePromoCode = (e) => {
@@ -46,7 +65,7 @@ export default function Cart() {
   const total = deliveryFee + subtotal - discountAmount;
 
   const handleCheckout = () => {
-    const items = JSON.parse(localStorage.getItem("cart") || "[]");
+    const items = readCartFromStorage();
     if (!items.length) {
       return;
     }
@@ -89,7 +108,7 @@ export default function Cart() {
     }
   };
 
-  if (!Cost) {
+  if (!cartItems.length) {
     return (
       <div className="my-4 px-4 xsm:px-6 md:px-8 max-w-6xl mx-auto w-full flex-col-reverse lg:flex-row flex items-center">
                 <div className="text-center flex flex-col items-center gap-5">
