@@ -5,8 +5,8 @@ import twentyFiveLitres from "../Svgs/25litres.png";
 export const Products = [
   // Home categories
   // { src: fiveLitres, type: "newarrival", name: "5 Litres Palm Oil – Chef’s Reserve", stars: 4.9, cost: 6000, discount: 4 },
-  { src: tenLitres, type: "topselling", name: "10 Litres Palm Oil – Golden Batch", stars: 4.7, cost: 11800, discount: 6 },
-  { src: twentyFiveLitres, type: "onsale", name: "25 Litres Palm Oil – Export Grade", stars: 4.8, cost: 27900, discount: 15 },
+  // { src: tenLitres, type: "topselling", name: "10 Litres Palm Oil – Golden Batch", stars: 4.7, cost: 11800, discount: 6 },
+  // { src: twentyFiveLitres, type: "onsale", name: "25 Litres Palm Oil – Export Grade", stars: 4.8, cost: 27900, discount: 15 },
 
   // Shop items
   { src: fiveLitres, id: "5B", place: "shop", type: "newarrival", type2: "All", name: "5 Litres Palm Oil – Family Pack", stars: 4.7, cost: 5650, discount: 2 },
