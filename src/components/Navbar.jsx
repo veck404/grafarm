@@ -115,11 +115,11 @@ export default function Navbar() {
             {/* Show item count if cart is not empty */}
             {Cart > 0 && (
               <motion.div
-                initial={{ scale: 1.2, y: -18, x: 18 }}
-                animate={{ scale: 1, y: -18, x: 18 }}
+                initial={{ scale: 1.2, y: -12, x: 12 }}
+                animate={{ scale: 1, y: -12, x: 12 }}
                 transition={{ type: "just" }}
                 key={Cart}
-                className="absolute -translate-y-4 translate-x-5 flex h-1 w-1 items-center justify-center rounded-full bg-green-700 p-3 text-xs font-semibold text-white dark:bg-green-400 dark:text-neutral-900"
+                className="absolute -translate-y-[18px] translate-x-[18px] flex min-h-[20px] min-w-[20px] items-center justify-center rounded-full bg-green-700 px-1.5 py-1 text-[11px] font-semibold text-white shadow-sm dark:bg-green-400 dark:text-neutral-900"
               >
                 {Cart}
               </motion.div>
