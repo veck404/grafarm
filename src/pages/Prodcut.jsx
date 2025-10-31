@@ -12,8 +12,7 @@ import Img from '../components/Img'
 
 export default function Prodcut() {
   const [MyProdcut, setMyProdcut] = useState({})
-  const {setCart} = useContext(CartCtx)
-  const {setCost} = useContext(CartCtx)
+  const { setCart, setCost, setItems } = useContext(CartCtx)
     const [Color] = useState('')
 
   const [Size, setSize] = useState('Any')
@@ -32,7 +31,7 @@ export default function Prodcut() {
   const handleSubmit = ()=>{
     const color = Color===1?'Yellow':Color===2?'Red':Color===3?'Green':Color===4?'Blue':Color===5?'Light Yellow':Color===6?'Light Red':Color===7?'Light Green':Color===8?'Light Blue':'Any'
     const size = Size;
-    AddToCart({...MyProdcut,color,size,Quantity},setCart,setCost)
+    AddToCart({...MyProdcut,color,size,Quantity},setCart,setCost,0,'add',setItems)
   }
 
   
