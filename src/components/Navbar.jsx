@@ -1,7 +1,7 @@
 // Import necessary hooks and components from React and other libraries
 import { useContext, useState } from "react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 // Import context for side navigation, cart, and theme
 import { SideNavCtx } from "../store/SideNavContext";
@@ -16,6 +16,7 @@ export default function Navbar() {
   const { sideNavHidden, setSideNavHidden } = useContext(SideNavCtx);
   // Get cart items from context
   const { Cart } = useContext(CartCtx);
+  const location = useLocation();
   // Get theme state and toggle function from context
   const { isDark, toggle } = useTheme();
 
@@ -111,7 +112,7 @@ export default function Navbar() {
           {/* Cart icon and item count */}
           <div className="relative">
             {/* Show item count if cart is not empty */}
-            {Cart !== 0 && (
+            {Cart > 0 && (
               <motion.div
                 initial={{ scale: 1.2, y: -18, x: 18 }}
                 animate={{ scale: 1, y: -18, x: 18 }}
@@ -123,7 +124,7 @@ export default function Navbar() {
               </motion.div>
             )}
             {/* Link to the cart page */}
-            <Link to="Cart" className="rounded-full p-2 transition-colors hover:bg-neutral-200 dark:hover:bg-neutral-700">
+            <Link to="/Cart" aria-label="View cart" className="relative rounded-full p-2 transition-all hover:-translate-y-0.5 hover:bg-neutral-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 dark:hover:bg-neutral-700 dark:focus-visible:outline-emerald-400">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-5 w-5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
               </svg>
