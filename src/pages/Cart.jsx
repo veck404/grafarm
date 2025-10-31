@@ -1,38 +1,39 @@
-import { useContext, useState, useRef,useEffect } from "react"
+import { useContext, useState, useRef, useEffect } from "react"
 import CartLayout from "../components/CartLayout"
 import { Link } from "react-router-dom"
 import { CartCtx } from "../store/CartContext"
 import { MdOutlineDiscount } from "react-icons/md";
-import { motion, AnimatePresence  } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
-import AddToCart from "../store/AddToCart"
 import { IoIosArrowForward } from "react-icons/io";
 import Img from "../components/Img"
 
 const WHATSAPP_NUMBER = "2347017567105";
 
 export default function Cart() {
-  const { setCart } = useContext(CartCtx)
-  const { Cost,setCost } = useContext(CartCtx)
-  const [ Discount, setDiscount ]= useState(0)
-  const [ CorrectDiscount, setCorrectDiscount ] = useState('Yet')
-  const DiscountRef = useRef()
-  const cartItems = JSON.parse(localStorage.getItem('cart') || "[]")
-  
+  const { Cart, setCart, Cost, setCost } = useContext(CartCtx);
+  const [Discount, setDiscount] = useState(0);
+  const [CorrectDiscount, setCorrectDiscount] = useState("Yet");
+  const [cartItems, setCartItems] = useState(() => JSON.parse(localStorage.getItem("cart") || "[]"));
+  const DiscountRef = useRef();
 
   useEffect(() => {
-    window.scrollTo(0,0)
-  },[])
+    window.scrollTo(0, 0)
+  }, [])
 
-  const handlePromoCode = (e)=>{
+  useEffect(() => {
+    setCartItems(JSON.parse(localStorage.getItem("cart") || "[]"));
+  }, [Cart, Cost]);
+
+  const handlePromoCode = (e) => {
     e.preventDefault();
-    if(DiscountRef.current.value === 'Moemen'){
+    if (DiscountRef.current.value === "Moemen") {
       setDiscount(20)
       setCorrectDiscount(true)
-    }else if(DiscountRef.current.value === 'MeMo'){
+    } else if (DiscountRef.current.value === "MeMo") {
       setDiscount(100)
       setCorrectDiscount(true)
-    }else{
+    } else {
       setDiscount(0)
       setCorrectDiscount(false)
     }
@@ -45,11 +46,12 @@ export default function Cart() {
   const total = deliveryFee + subtotal - discountAmount;
 
   const handleCheckout = () => {
-    if (!cartItems.length) {
+    const items = JSON.parse(localStorage.getItem("cart") || "[]");
+    if (!items.length) {
       return;
     }
 
-    const orderLines = cartItems
+    const orderLines = items
       .map((item, index) => {
         const attributes = [item.size && `Size: ${item.size}`, item.color && `Color: ${item.color}`]
           .filter(Boolean)
@@ -81,11 +83,13 @@ export default function Cart() {
 
     const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
-    AddToCart([], setCart, setCost, 0, 'empty');
-    window.location.href = whatsappUrl;
+    const newWindow = window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    if (!newWindow) {
+      window.location.href = whatsappUrl;
+    }
   };
 
-  if(!Cost){
+  if (!Cost) {
     return (
       <div className="my-4 px-4 xsm:px-6 md:px-8 max-w-6xl mx-auto w-full flex-col-reverse lg:flex-row flex items-center">
                 <div className="text-center flex flex-col items-center gap-5">
