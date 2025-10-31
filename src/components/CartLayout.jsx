@@ -1,17 +1,18 @@
 import { useState } from 'react'
 import { FaRegTrashAlt } from "react-icons/fa";
 import { motion, AnimatePresence } from 'framer-motion'
-import AddToCart from '../store/AddToCart';
 import Img from './Img';
+import { useCartActions } from '../store/useCartActions';
 
 
-export default function CartLayout({item,setCart,setCost,setItems}) {
+export default function CartLayout({ item }) {
+  const { changeQuantity, removeItem } = useCartActions();
   const [ ShowName, setShowName ] = useState(false)
   const handleQuantityChange = (num)=>{
-    AddToCart(item,setCart,setCost,num,'add',setItems)
+    changeQuantity(item, num)
   }
   const handleDelete = ()=>{
-    AddToCart(item,setCart,setCost,-item.Quantity,'add',setItems)
+    removeItem(item)
   }
   return (
     <div className=' gap-y-10 flex-wrap flex justify-between'>

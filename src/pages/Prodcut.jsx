@@ -1,18 +1,17 @@
-import { useContext, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams,Link } from 'react-router-dom'
 import { Products } from '../store/Constants'
 import Page404 from './Page404'
 import RateCost from '../components/RateCost'
 import {motion} from "framer-motion"
-import AddToCart from '../store/AddToCart'
-import { CartCtx } from '../store/CartContext'
+import { useCartActions } from '../store/useCartActions'
 import HomeSliders from '../components/HomeSliders'
 import { IoIosArrowForward } from "react-icons/io";
 import Img from '../components/Img'
 
 export default function Prodcut() {
   const [MyProdcut, setMyProdcut] = useState({})
-  const { setCart, setCost, setItems } = useContext(CartCtx)
+  const { addItem } = useCartActions()
     const [Color] = useState('')
 
   const [Size, setSize] = useState('Any')
@@ -31,7 +30,7 @@ export default function Prodcut() {
   const handleSubmit = ()=>{
     const color = Color===1?'Yellow':Color===2?'Red':Color===3?'Green':Color===4?'Blue':Color===5?'Light Yellow':Color===6?'Light Red':Color===7?'Light Green':Color===8?'Light Blue':'Any'
     const size = Size;
-    AddToCart({...MyProdcut,color,size,Quantity},setCart,setCost,0,'add',setItems)
+    addItem({ ...MyProdcut, color, size }, Quantity)
   }
 
   

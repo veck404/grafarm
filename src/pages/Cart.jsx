@@ -11,7 +11,7 @@ import Img from "../components/Img"
 const WHATSAPP_NUMBER = "2347017567105";
 
 export default function Cart() {
-  const { setCart, Cost, setCost, Items, setItems } = useContext(CartCtx);
+  const { Cost, Items } = useContext(CartCtx);
   const [Discount, setDiscount] = useState(0);
   const [CorrectDiscount, setCorrectDiscount] = useState("Yet");
   const DiscountRef = useRef();
@@ -124,7 +124,7 @@ export default function Cart() {
                       key="modal"
                       transition={{type:'just',delay:0.1*index}}
                         >
-                      <CartLayout setCart={setCart} setCost={setCost} setItems={setItems} item={item}/>
+                      <CartLayout item={item} />
                       {index+1!==Items.length && <hr className="my-5"/>}
                     </motion.div>
                   </AnimatePresence>
