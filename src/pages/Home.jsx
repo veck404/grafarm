@@ -188,7 +188,7 @@ export default function Home({ to = "" }) {
               className="relative flex w-full max-w-[420px] justify-center md:w-1/2 md:justify-end"
             >
               <div className="relative w-full overflow-hidden rounded-3xl border border-white/60 bg-white/70 shadow-xl backdrop-blur-sm dark:border-neutral-700/70 dark:bg-neutral-900/70">
-                <Img className="h-full w-full" src={mainJpg} alt="Fresh palm fruit ready for processing" img="palm fruit" />
+                <Img className="h-[420px] w-full sm:h-[480px] lg:h-[520px]" src={mainJpg} alt="Fresh palm fruit ready for processing" img="palm fruit" />
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
