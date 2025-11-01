@@ -299,13 +299,13 @@ export default function Home({ to = "" }) {
       </section>
 
       <div ref={NewArrival}>
-        <HomeSliders text="Fresh Harvest Arrivals" type="newarrival" />
+        <HomeSliders text="5 Litres" type="newarrival" />
       </div>
       <div ref={TopSelling}>
-        <HomeSliders text="Top Selling Favourites" type="topselling" />
+        <HomeSliders text="10 Litres" type="topselling" />
       </div>
       <div ref={OnSale}>
-        <HomeSliders text="Seasonal Offers" type="onsale" />
+        <HomeSliders text="25 Litres" type="onsale" />
       </div>
 
       <HappyCustomers />
