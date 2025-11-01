@@ -53,13 +53,13 @@ export default function ImgSlider({ type, del = "no", id }) {
   const visibleProducts = isMobile ? ProductsByType.slice(0, 1) : ProductsByType;
 
   return (
-    <div className="mt-10 flex justify-center overflow-hidden sm:justify-start" ref={ref}>
+    <div className="mt-10 flex justify-center overflow-hidden" ref={ref}>
       <motion.div
         drag="x"
         dragConstraints={{ left: -Width, right: 0 }}
         whileTap={{ cursor: "grabbing" }}
         ref={mainDiv}
-        className={`flex w-fit gap-5 cursor-pointer ${isMobile ? "justify-center" : ""}`}
+        className={`flex w-fit gap-5 cursor-pointer ${isMobile ? "justify-center" : ""} mx-auto`}
       >
         {visibleProducts.map((el, index) => {
           return (
