@@ -67,7 +67,7 @@ export default function HappyCustomers() {
                   ))}
                 </div>
                 <div className="flex items-center gap-2">
-                  <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">{el.name}</h3>
+                  <h3 className="font-display text-lg font-semibold text-neutral-900 dark:text-neutral-100">{el.name}</h3>
                   <MdVerified size={20} className="text-green-600 dark:text-emerald-400" />
                 </div>
                 <p className="text-sm leading-relaxed text-neutral-600 dark:text-neutral-300">{el.review}</p>

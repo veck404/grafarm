@@ -31,7 +31,7 @@ export default function Footer() {
         <div className="flex flex-col justify-between gap-6 rounded-3xl border border-white/50 bg-white/5 p-6 backdrop-blur-sm">
           <div>
             <span className="text-xs uppercase tracking-[0.4em] text-white/70">Hotline</span>
-            <p className="mt-3 flex items-center gap-2 text-lg font-semibold">
+            <p className="font-display mt-3 flex items-center gap-2 text-lg font-semibold">
               <MdOutlinePhone className="h-5 w-5" />
               +234 (0) 701 756 7105
             </p>

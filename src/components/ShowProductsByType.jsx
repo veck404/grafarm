@@ -23,7 +23,7 @@ export default function ShowProductsByType({ MyProducts = [] }) {
 
       {products.length === 0 ? (
         <div className="mt-12 rounded-2xl border border-dashed border-neutral-300 bg-white/70 p-10 text-center dark:border-neutral-700 dark:bg-neutral-900/60">
-          <p className="text-lg font-semibold text-neutral-700 dark:text-neutral-200">No products available right now.</p>
+          <p className="font-display text-lg font-semibold text-neutral-700 dark:text-neutral-200">No products available right now.</p>
           <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400">
             Please check back soon—we’re pressing a fresh batch.
           </p>
