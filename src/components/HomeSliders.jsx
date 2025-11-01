@@ -24,7 +24,7 @@ export default function HomeSliders({ text, type, del = "no", id }) {
           <span>{typeLabel}</span>
           <span className="h-1 w-8 rounded-full bg-green-700 dark:bg-emerald-300" />
         </div>
-        <h2 className="bolded text-3xl text-green-900 sm:text-4xl dark:text-green-200">{text}</h2>
+        <h2 className="font-display text-3xl text-green-900 sm:text-4xl dark:text-green-200">{text}</h2>
         <p className="mx-auto mt-4 max-w-2xl text-sm text-neutral-600 sm:text-base dark:text-neutral-300">
           {copyByType[type] || "Discover palm oil varieties curated to elevate every kitchen moment."}
         </p>

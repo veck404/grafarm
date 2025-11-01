@@ -7,6 +7,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["'Plus Jakarta Sans'", "ui-sans-serif", "system-ui", "sans-serif"],
+        display: ["'Playfair Display'", "serif"],
+      },
       screens:{
         nav:'1110px',
         shop:'974px',
@@ -30,4 +34,3 @@ export default {
   },
   plugins: [],
 }
-

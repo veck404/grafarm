@@ -1,6 +1,7 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
 
 ::-moz-selection { /* Code for Firefox */
   color: white;
@@ -22,13 +23,8 @@
   background: black;
 }
 
-
-@font-face {
-  font-family: bolded;
-  src: url(../Fonts/Fontspring-DEMO-integralcf-bold.otf) format('opentype');
-}
-.bolded{
-  font-family: bolded;
+body {
+  font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 /* Slider Styles */
 

@@ -57,7 +57,7 @@ export default function Navbar() {
       <motion.nav className="p-4 xsm:px-6 md:px-8 pb-0 max-w-6xl mx-auto w-full flex items-center justify-between gap-6 py-3 nav:gap-12">
         {/* Logo and link to home */}
         <motion.span initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
-          <Link className="bolded text-2xl font-bold text-green-900 dark:text-green-300 xsm:text-4xl" to="">
+          <Link className="font-display text-2xl font-bold text-green-900 dark:text-green-300 xsm:text-4xl" to="">
             Graferd Farms
           </Link>
         </motion.span>

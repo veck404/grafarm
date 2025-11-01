@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="my-4 px-4 xsm:px-6 md:px-8 max-w-6xl mx-auto w-full pb-10">
       <div className="mt-16 grid gap-8 rounded-3xl border border-neutral-200 bg-gradient-to-br from-green-900 via-emerald-800 to-amber-700 px-6 py-10 text-white shadow-lg dark:border-neutral-700 dark:from-neutral-950 dark:via-emerald-950 dark:to-amber-900 md:grid-cols-[1.2fr_1fr] md:px-10 md:py-14">
         <div className="flex flex-col gap-6">
-          <h2 className="bolded text-3xl sm:text-4xl">Stay ahead of every fresh press</h2>
+          <h2 className="font-display text-3xl sm:text-4xl">Stay ahead of every fresh press</h2>
           <p className="max-w-xl text-sm text-white/80 sm:text-base">
           Join our list of favourite customers to get the best offers, promotional and discount updates on the fly.
           </p>
@@ -51,7 +51,7 @@ export default function Footer() {
 
       <div className="mt-16 grid gap-12 md:grid-cols-4">
         <div className="flex flex-col gap-4">
-          <h3 className="bolded text-2xl text-green-900 dark:text-green-200">Graferd Farms</h3>
+          <h3 className="font-display text-2xl text-green-900 dark:text-green-200">Graferd Farms</h3>
           <p className="text-sm text-neutral-600 dark:text-neutral-300">
             Supplying premium palm oil from sustainable Nigerian plantations. We help households, restaurants, and distributors bring
             authentic flavour to the table.

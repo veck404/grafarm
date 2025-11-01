@@ -19,7 +19,7 @@ export default function HappyCustomers() {
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="text-sm uppercase tracking-[0.4em] text-green-700 dark:text-emerald-300">Community Voices</p>
-            <h2 className="bolded mt-2 text-3xl text-green-900 sm:text-4xl dark:text-green-200">Our happy customers</h2>
+            <h2 className="font-display mt-2 text-3xl text-green-900 sm:text-4xl dark:text-green-200">Our happy customers</h2>
             <p className="mt-3 max-w-2xl text-neutral-600 dark:text-neutral-300">
               From family kitchens to large-scale caterers, see how Graferd Farms palm oil elevates signature recipes across Nigeria.
             </p>

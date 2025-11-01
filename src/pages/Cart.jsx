@@ -67,7 +67,7 @@ export default function Cart() {
     return (
       <div className="my-4 px-4 xsm:px-6 md:px-8 max-w-6xl mx-auto w-full flex-col-reverse lg:flex-row flex items-center">
                 <div className="text-center flex flex-col items-center gap-5">
-          <h1 className="bolded text-4xl xsm:text-5xl">Your Cart is Empty!</h1>
+          <h1 className="font-display text-4xl xsm:text-5xl">Your Cart is Empty!</h1>
           <p>Must add items on the card before you proceed to checkout</p>
           <div className="p-4"><Link className="bg-black text-white py-3 px-16 rounded-3xl w-fit" to='/Shop'>Go to Shop</Link></div>
         </div>
@@ -89,7 +89,7 @@ export default function Cart() {
         <IoIosArrowForward color='gray'/>
         <p className=''>Cart</p>
       </div>
-      <h1 className="bolded text-3xl xsm:text-4xl">Your Cart</h1>
+      <h1 className="font-display text-3xl xsm:text-4xl">Your Cart</h1>
       <div className="mt-10 flex flex-wrap gap-5">
         <motion.div key={Items.length} className="flex flex-grow-huge h-fit flex-col rounded-xl border-2 p-5">
             <AnimatePresence>
@@ -119,20 +119,20 @@ export default function Cart() {
           initial={{opacity:0,y:10}}
           animate={{opacity:1,y:0}}
         className="p-5 rounded-xl border-2 flex-grow sm:min-w-[450px] h-fit">
-          <h1 className="mb-5 font-bold text-xl">Order Summary</h1>
+          <h1 className="font-display mb-5 font-bold text-xl">Order Summary</h1>
           <div className="flex flex-col gap-5">
               <div className="flex justify-between">
                 <div>Subtotal</div>
-                <div className="text-lg font-bold">{formatCurrency(subtotal)}</div>
+                <div className="font-display text-lg font-bold">{formatCurrency(subtotal)}</div>
               </div>
               <div className="flex justify-between">
                 <div>Delivery Fee</div>
-                <div className="text-lg font-bold">{formatCurrency(deliveryFee)}</div>
+                <div className="font-display text-lg font-bold">{formatCurrency(deliveryFee)}</div>
               </div>
               <hr />
               <div className="flex justify-between">
                 <div>Total</div>
-                <div className="text-lg font-bold">{formatCurrency(total)}</div>
+                <div className="font-display text-lg font-bold">{formatCurrency(total)}</div>
               </div>
               <div className="flex mt-5 mb-5">
                 <button

@@ -14,7 +14,7 @@ export default function ShowProductsByType({ MyProducts = [] }) {
     <section className="px-4 xsm:px-6 md:px-8 max-w-6xl mx-auto w-full mt-8">
       <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <h2 className="text-2xl font-bold text-green-900 sm:text-3xl dark:text-green-200">Palm Oil Products</h2>
+          <h2 className="font-display text-2xl font-bold text-green-900 sm:text-3xl dark:text-green-200">Palm Oil Products</h2>
           <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
             Browse our curated collection of cold-pressed palm oil, ready for homes, restaurants, and regional distributors.
           </p>

@@ -5,7 +5,7 @@ export default function Page404() {
   return (
     <div className="my-4 px-4 xsm:px-6 md:px-8 max-w-6xl mx-auto w-full flex-col-reverse lg:flex-row flex items-center">
     <div className="text-center flex flex-col items-center gap-5">
-      <h1 className="bolded text-4xl xsm:text-5xl">Somthing went wrong</h1>
+      <h1 className="font-display text-4xl xsm:text-5xl">Somthing went wrong</h1>
       <p>We cant seem to find page you are looking for</p>
       <div className="p-4"><Link className="bg-black text-white py-3 px-16 rounded-3xl w-fit" to='/'>Back to home</Link></div>
     </div>

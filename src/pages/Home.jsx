@@ -115,7 +115,7 @@ export default function Home({ to = "" }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ duration: 0.55, delay: 0.05 }}
-                className="bolded text-4xl leading-tight text-green-800 sm:text-5xl md:text-6xl dark:text-green-200"
+                className="font-display text-4xl leading-tight text-green-800 sm:text-5xl md:text-6xl dark:text-green-200"
               >
                 Premium Palm Oil for Bold, Authentic Flavour
               </motion.h1>
@@ -173,7 +173,7 @@ export default function Home({ to = "" }) {
                     transition={{ duration: 0.45, delay: 0.1 * index }}
                     className="rounded-2xl border border-white/60 bg-white/70 p-4 text-center shadow-sm backdrop-blur-sm dark:border-neutral-700/60 dark:bg-neutral-900/70"
                   >
-                    <p className="text-3xl font-semibold text-green-800 dark:text-emerald-300">{stat.value}</p>
+                    <p className="font-display text-3xl font-semibold text-green-800 dark:text-emerald-300">{stat.value}</p>
                     <p className="text-sm text-neutral-600 dark:text-neutral-400">{stat.label}</p>
                   </motion.div>
                 ))}
@@ -216,7 +216,7 @@ export default function Home({ to = "" }) {
         >
           <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">
-              <h2 className="bolded text-3xl text-green-900 sm:text-4xl dark:text-green-200">Trusted by kitchens that serve thousands daily</h2>
+              <h2 className="font-display text-3xl text-green-900 sm:text-4xl dark:text-green-200">Trusted by kitchens that serve thousands daily</h2>
               <p className="mt-4 text-neutral-600 dark:text-neutral-300">
                 Leading restaurants, caterers, and food brands rely on our supply chain to keep their menus vibrant. Seamless bulk ordering,
                 reliable restocking, and consistent taste keeps your customers coming back.
@@ -236,7 +236,7 @@ export default function Home({ to = "" }) {
       <section className="my-4 px-4 xsm:px-6 md:px-8 max-w-6xl mx-auto w-full mt-16">
         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 0.55 }}>
           <p className="text-sm uppercase tracking-[0.4em] text-green-700 dark:text-emerald-300">Why Graferd</p>
-          <h2 className="bolded mt-3 text-3xl text-green-900 sm:text-4xl dark:text-green-200">From harvest to bottle, quality leads the way</h2>
+          <h2 className="font-display mt-3 text-3xl text-green-900 sm:text-4xl dark:text-green-200">From harvest to bottle, quality leads the way</h2>
           <p className="mt-4 max-w-3xl text-neutral-600 dark:text-neutral-300">
             Every step of our process is engineered to respect the farmers who nurture the palms and the chefs who rely on our oils. Explore
             the Graferd promise.
@@ -255,7 +255,7 @@ export default function Home({ to = "" }) {
               <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-lime-100 text-green-700 transition-colors group-hover:bg-green-600 group-hover:text-white dark:bg-emerald-900/40 dark:text-emerald-300 dark:group-hover:bg-emerald-500 dark:group-hover:text-neutral-950">
                 <Icon size={24} />
               </span>
-              <h3 className="mt-5 text-xl font-semibold text-neutral-900 dark:text-neutral-100">{title}</h3>
+              <h3 className="font-display mt-5 text-xl font-semibold text-neutral-900 dark:text-neutral-100">{title}</h3>
               <p className="mt-3 text-neutral-600 dark:text-neutral-300">{description}</p>
             </motion.div>
           ))}
@@ -266,7 +266,7 @@ export default function Home({ to = "" }) {
         <div className="overflow-hidden rounded-3xl border border-neutral-200 bg-gradient-to-br from-white via-lime-50 to-amber-50 px-6 py-12 shadow-lg dark:border-neutral-800 dark:from-neutral-950 dark:via-emerald-950/30 dark:to-amber-900/20 md:px-10">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 0.55 }}>
             <p className="text-sm uppercase tracking-[0.4em] text-green-700 dark:text-emerald-300">Our Journey</p>
-            <h2 className="bolded mt-3 text-3xl text-green-900 sm:text-4xl dark:text-green-200">Harvest-to-table in four purposeful steps</h2>
+            <h2 className="font-display mt-3 text-3xl text-green-900 sm:text-4xl dark:text-green-200">Harvest-to-table in four purposeful steps</h2>
             <p className="mt-4 max-w-3xl text-neutral-600 dark:text-neutral-300">We guard freshness and authenticity at each stage so you always receive palm oil with a clean flavour profile.</p>
           </motion.div>
           <motion.ol
@@ -291,7 +291,7 @@ export default function Home({ to = "" }) {
                 <span className="absolute -top-3 left-6 flex h-10 w-10 items-center justify-center rounded-full bg-green-700 text-white shadow-md dark:bg-emerald-500 dark:text-neutral-950">
                   {index + 1}
                 </span>
-                <h3 className="mt-6 text-xl font-semibold text-neutral-900 dark:text-neutral-100">{step.title}</h3>
+                <h3 className="font-display mt-6 text-xl font-semibold text-neutral-900 dark:text-neutral-100">{step.title}</h3>
                 <p className="mt-3 text-neutral-600 dark:text-neutral-300">{step.copy}</p>
               </motion.li>
             ))}

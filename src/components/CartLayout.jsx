@@ -20,7 +20,7 @@ export default function CartLayout({ item }) {
           <div className='bg-gray-100 cart:block flex justify-center items-center cart:flex-shrink-0 flex-grow h-fit'><Img className='cart:w-32 cart:h-32' src={item.src} img={item.src?.split('/').pop().split('.')[0]}  alt="" from='cart'/></div>
           <div className='flex flex-col justify-between'>
             <div className='flex flex-col'>
-              <h1 className='font-bold text-2xl overflow-hidden w-[190px]' style={{textOverflow:'ellipsis',whiteSpace:'nowrap'}} onClick={()=>setShowName(pre=>!pre)} title={item.name}>{item.name}</h1>
+              <h1 className='font-display font-bold text-2xl overflow-hidden w-[190px]' style={{textOverflow:'ellipsis',whiteSpace:'nowrap'}} onClick={()=>setShowName(pre=>!pre)} title={item.name}>{item.name}</h1>
               <AnimatePresence>{ShowName&&<motion.div
                 initial={{opacity:0,y:-10}}
                 animate={{opacity:1,y:-30}}
@@ -29,7 +29,7 @@ export default function CartLayout({ item }) {
               <p>Size: {item.size}</p>
               <p>Color: {item.color}</p>
             </div>
-            <div className='font-bold text-2xl'>₦{item.cost}</div>
+            <div className='font-display font-bold text-2xl'>₦{item.cost}</div>
           </div>
         </div>
         <div className='relative flex-grow cart2:flex-grow-0 items-end flex flex-col justify-end'>

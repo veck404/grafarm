@@ -9,7 +9,11 @@ export default function RateCost({ from = "Home", name, stars = 5, cost, discoun
     <div className={from === "Home" ? "flex h-full flex-col justify-between" : ""}>
       <div>
         <h1
-          className={`font-bold ${from !== "Home" ? "bolded text-4xl max-w-[600px] sm:text-5xl text-neutral-900 dark:text-neutral-100" : "text-lg text-neutral-900 dark:text-neutral-100"}`}
+          className={`font-bold ${
+            from !== "Home"
+              ? "font-display text-4xl max-w-[600px] sm:text-5xl text-neutral-900 dark:text-neutral-100"
+              : "text-lg text-neutral-900 dark:text-neutral-100"
+          }`}
         >
           {name}
         </h1>
@@ -31,7 +35,11 @@ export default function RateCost({ from = "Home", name, stars = 5, cost, discoun
           <span className="font-medium text-neutral-700 dark:text-neutral-300">{stars}</span>
           <span>/ 5</span>
         </div>
-        <div className={`mt-3 flex items-center gap-2 ${from !== "Home" ? "text-2xl font-semibold" : "text-xl font-semibold"}`}>
+        <div
+          className={`mt-3 flex items-center gap-2 ${
+            from !== "Home" ? "font-display text-2xl font-semibold" : "text-xl font-semibold"
+          }`}
+        >
           <span className="text-green-800 dark:text-emerald-300">₦{formattedCost}</span>
           {discount > 0 && (
             <div className="flex items-center gap-2 text-sm font-medium">

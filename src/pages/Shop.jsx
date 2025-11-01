@@ -29,7 +29,7 @@ export default function Shop() {
                 <IoIosArrowForward />
                 <span>Shop</span>
               </div>
-              <h1 className="bolded mt-4 text-3xl text-green-900 sm:text-4xl dark:text-green-200">Shop palm oil essentials</h1>
+              <h1 className="font-display mt-4 text-3xl text-green-900 sm:text-4xl dark:text-green-200">Shop palm oil essentials</h1>
               <p className="mt-3 max-w-2xl text-sm text-neutral-600 sm:text-base dark:text-neutral-300">
                 Discover premium palm oil varieties for every kitchen size—from family cooking to large-scale food production. Filter by
                 freshness, flavour profile, or packaging to find your perfect match.
