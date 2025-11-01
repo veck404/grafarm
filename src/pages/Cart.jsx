@@ -1,8 +1,7 @@
-import { useContext, useState, useRef, useEffect } from "react"
+import { useContext, useEffect } from "react"
 import CartLayout from "../components/CartLayout"
 import { Link } from "react-router-dom"
 import { CartCtx } from "../store/CartContext"
-import { MdOutlineDiscount } from "react-icons/md";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { IoIosArrowForward } from "react-icons/io";
@@ -12,33 +11,15 @@ const WHATSAPP_NUMBER = "2347017567105";
 
 export default function Cart() {
   const { Cost, Items } = useContext(CartCtx);
-  const [Discount, setDiscount] = useState(0);
-  const [CorrectDiscount, setCorrectDiscount] = useState("Yet");
-  const DiscountRef = useRef();
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
 
-  const handlePromoCode = (e) => {
-    e.preventDefault();
-    if (DiscountRef.current.value === "Moemen") {
-      setDiscount(20)
-      setCorrectDiscount(true)
-    } else if (DiscountRef.current.value === "MeMo") {
-      setDiscount(100)
-      setCorrectDiscount(true)
-    } else {
-      setDiscount(0)
-      setCorrectDiscount(false)
-    }
-  }
-
   const subtotal = Number(Cost || 0);
   const formatCurrency = (amount) => `₦${Number(amount ?? 0).toLocaleString("en-NG")}`;
   const deliveryFee = 15;
-  const discountAmount = (subtotal * Discount) / 100;
-  const total = deliveryFee + subtotal - discountAmount;
+  const total = deliveryFee + subtotal;
 
   const handleCheckout = () => {
     if (!Items.length) {
@@ -58,7 +39,6 @@ export default function Cart() {
 
     const summaryLines = [
       `Subtotal: ${formatCurrency(subtotal)}`,
-      Discount ? `Discount: ${Discount}% (-${formatCurrency(discountAmount)})` : null,
       `Delivery Fee: ${formatCurrency(deliveryFee)}`,
       `Total: ${formatCurrency(total)}`
     ].filter(Boolean);
@@ -146,10 +126,6 @@ export default function Cart() {
                 <div className="text-lg font-bold">{formatCurrency(subtotal)}</div>
               </div>
               <div className="flex justify-between">
-                <div>Discount (-{Discount}%)</div>
-                <div className="text-lg font-bold text-red-600">-{formatCurrency(discountAmount)}</div>
-              </div>
-              <div className="flex justify-between">
                 <div>Delivery Fee</div>
                 <div className="text-lg font-bold">{formatCurrency(deliveryFee)}</div>
               </div>
@@ -157,16 +133,6 @@ export default function Cart() {
               <div className="flex justify-between">
                 <div>Total</div>
                 <div className="text-lg font-bold">{formatCurrency(total)}</div>
-              </div>
-              <div>
-                <div title="Moemen" className="absolute translate-y-4 translate-x-4"><MdOutlineDiscount size={20}/></div>
-                <form onSubmit={handlePromoCode} className="flex flex-wrap gap-5">
-                  <input ref={DiscountRef} className="flex-grow bg-gray-100 rounded-full py-3 pl-10 outline-none" placeholder="Add promo code" type="text" />
-                  <button className="bg-black text-white py-3 px-16 rounded-3xl text-center sm:flex-grow-0 flex-grow" type="submit">Apply</button>
-                </form>
-                {CorrectDiscount===false && <p className="font-bold mt-5 text-center text-red-600">Wrong promo code please try again!</p>}
-                {CorrectDiscount==='Yet' && <p className="font-bold mt-5 text-center">Use promo code Moemen for 20% discount</p>}
-                {CorrectDiscount===true && <p className="font-bold mt-5 text-center text-green-600">Promo code applied successfully</p>}
               </div>
               <div className="flex mt-5 mb-5">
                 <button

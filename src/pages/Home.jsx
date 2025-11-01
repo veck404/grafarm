@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { LuShieldCheck, LuSprout, LuDroplet, LuTruck } from "react-icons/lu";
+import { LuShieldCheck, LuSprout, LuDroplet, LuTruck, LuShoppingCart } from "react-icons/lu";
 import HomeSliders from "../components/HomeSliders";
 import HappyCustomers from "../components/HappyCustomers";
 import Img from "../components/Img";
@@ -139,10 +139,11 @@ export default function Home({ to = "" }) {
                 className="mt-4 flex flex-col gap-4 sm:flex-row"
               >
                 <Link
-                  className="w-full rounded-full bg-green-800 px-8 py-3 text-center text-white shadow-lg shadow-green-800/20 transition hover:-translate-y-1 hover:bg-green-700 sm:w-auto dark:bg-emerald-500 dark:hover:bg-emerald-400 dark:text-neutral-950"
+                  className="flex w-full items-center justify-center gap-2 rounded-full bg-green-800 px-8 py-3 text-white shadow-lg shadow-green-800/20 transition hover:-translate-y-1 hover:bg-green-700 sm:w-auto dark:bg-emerald-500 dark:hover:bg-emerald-400 dark:text-neutral-950"
                   to="Shop"
                 >
-                  Shop Collection
+                  <LuShoppingCart aria-hidden="true" className="text-lg" />
+                  Place Order
                 </Link>
                 <Link
                   className="w-full rounded-full border border-green-700/70 bg-white/70 px-8 py-3 text-center font-semibold text-green-800 transition hover:-translate-y-1 hover:border-green-800 hover:bg-white sm:w-auto dark:border-emerald-400/60 dark:bg-neutral-900/60 dark:text-emerald-200 dark:hover:border-emerald-300 dark:hover:bg-neutral-900"
@@ -196,7 +197,7 @@ export default function Home({ to = "" }) {
                   className="absolute bottom-5 left-5 flex max-w-xs flex-col gap-2 rounded-2xl bg-white/90 p-4 text-neutral-800 shadow-lg backdrop-blur-sm dark:bg-neutral-950/80 dark:text-neutral-100"
                 >
                   <span className="text-xs font-semibold uppercase tracking-widest text-green-700 dark:text-emerald-300">Best Seller</span>
-                  <p className="text-sm font-medium">Organic Golden Palm Oil • 25L Jerry Can</p>
+                  <p className="text-sm font-medium">Small, Medium and Large jerry can</p>
                   <span className="text-xs text-neutral-500 dark:text-neutral-400">Ships within 24 hours nationwide</span>
                 </motion.div>
               </div>
