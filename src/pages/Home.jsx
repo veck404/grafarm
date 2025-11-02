@@ -194,7 +194,7 @@ export default function Home({ to = "" }) {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.45, delay: 0.3 }}
-                  className="absolute bottom-6 left-5 z-10 flex max-w-xs flex-col gap-2 rounded-2xl bg-white/90 p-4 text-neutral-800 shadow-lg backdrop-blur-sm dark:bg-neutral-950/80 dark:text-neutral-100 sm:bottom-7 sm:left-6 md:bottom-8 md:left-8"
+                  className="absolute bottom-9 left-6 right-6 z-10 flex flex-col gap-3 rounded-2xl bg-white/90 p-6 text-neutral-800 shadow-lg backdrop-blur-sm dark:bg-neutral-950/50 dark:text-neutral-100 sm:bottom-7 sm:left-8 sm:right-8 md:bottom-8 md:left-10 md:right-10"
                 >
                   <span className="text-xs font-semibold uppercase tracking-widest text-green-700 dark:text-emerald-300">Best Seller</span>
                   <p className="text-sm font-medium">Small, Medium and Large jerry can</p>
