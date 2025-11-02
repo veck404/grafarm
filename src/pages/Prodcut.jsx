@@ -87,28 +87,6 @@ export default function Prodcut() {
 
             <div className='mt-10'></div>
             <hr />
-            <div className='absolute -translate-y-4 right-10 bg-white dark:bg-neutral-900'>Choose Container</div>
-            <div className='flex flex-wrap gap-4 mt-10'>
-              <motion.div 
-                initial={{opacity:0,x:-75}}
-                animate={{opacity:1,x:0}}
-                transition={{delay:0}} onClick={handleSizeChanges('10L')} 
-              className={`${Size==='10L'?'bg-black text-white':'bg-gray-100 dark:bg-neutral-800'} cursor-pointer py-2 px-5 rounded-full `}>Yello</motion.div>
-              <motion.div 
-                initial={{opacity:0,x:-75}}
-                animate={{opacity:1,x:0}}
-                transition={{delay:0.1}} onClick={handleSizeChanges('25L')} 
-              className={`${Size==='25L'?'bg-black text-white':'bg-gray-100 dark:bg-neutral-800'} cursor-pointer py-2 px-5 rounded-full `}>Transparent</motion.div>
-              <motion.div 
-                initial={{opacity:0,x:-75}}
-                animate={{opacity:1,x:0}}
-                transition={{delay:0.2}} onClick={handleSizeChanges('50L')} 
-              className={`${Size==='50L'?'bg-black text-white':'bg-gray-100 dark:bg-neutral-800'} cursor-pointer py-2 px-5 rounded-full `}>Black</motion.div>
-            </div>
-
-            
-            <div className='mt-10'></div>
-            <hr />
             <div className='flex flex-col xsm:flex-row flex-wrap mt-10 gap-10'>
               <motion.div
                 initial={{opacity:0,x:-75}}
