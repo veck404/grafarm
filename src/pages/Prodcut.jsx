@@ -14,7 +14,6 @@ export default function Prodcut() {
   const { addItem } = useCartActions()
     const [Color] = useState('')
 
-  const [Size, setSize] = useState('Any')
   const [Quantity, setQuantity] = useState(1)
   const { name } = useParams()
   
@@ -29,16 +28,8 @@ export default function Prodcut() {
 
   const handleSubmit = ()=>{
     const color = Color===1?'Yellow':Color===2?'Red':Color===3?'Green':Color===4?'Blue':Color===5?'Light Yellow':Color===6?'Light Red':Color===7?'Light Green':Color===8?'Light Blue':'Any'
-    const size = Size;
+    const size = 'Any';
     addItem({ ...MyProdcut, color, size }, Quantity)
-  }
-
-  
-  const handleSizeChanges = (el)=>{
-    if(el===Size){
-      return ()=>setSize('')
-    }
-    return ()=>setSize(el)
   }
 
 
