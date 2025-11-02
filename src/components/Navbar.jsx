@@ -64,18 +64,8 @@ export default function Navbar() {
         {/* Navigation links for larger screens */}
         <div className="hidden nav:flex items-center gap-8 text-sm font-medium tracking-wide">
           <motion.div initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
-            <Link className="hover:underline underline-offset-4 cursor-pointer text-neutral-700 transition hover:text-green-700 dark:text-neutral-200 dark:hover:text-green-300" to="/NewArrival">
-              New Arrivals
-            </Link>
-          </motion.div>
-          <motion.div initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
             <Link className="hover:underline underline-offset-4 cursor-pointer text-neutral-700 transition hover:text-green-700 dark:text-neutral-200 dark:hover:text-green-300" to="/TopSelling">
               Top Selling
-            </Link>
-          </motion.div>
-          <motion.div initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
-            <Link className="hover:underline underline-offset-4 cursor-pointer text-neutral-700 transition hover:text-green-700 dark:text-neutral-200 dark:hover:text-green-300" to="/OnSale">
-              On Sale
             </Link>
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>

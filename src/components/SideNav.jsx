@@ -34,9 +34,7 @@ export default function SideNav() {
       <div className="">
         <ul className="flex flex-col gap-10 mt-10">
             <li><Link className="hover:underline underline-offset-4 cursor-pointer" to='/Shop'>Shop</Link></li>
-            <li><Link className="hover:underline underline-offset-4 cursor-pointer" to='/NewArrival'>New Arrivals</Link></li>
             <li><Link className="hover:underline underline-offset-4 cursor-pointer" to='/TopSelling'>Top Selling</Link></li>
-            <li><Link className="hover:underline underline-offset-4 cursor-pointer" to='/OnSale'>On Sale</Link></li>
             <li><Link className="hover:underline underline-offset-4 cursor-pointer" to='/Journey'>About Us</Link></li>
           <form className="flex gap-2" onSubmit={handleFormSubmit}>
             <button type="submit">
