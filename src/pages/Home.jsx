@@ -241,6 +241,18 @@ export default function Home({ to = "" }) {
         </div>
       </section>
 
+      <div ref={NewArrival}>
+        <HomeSliders text="5 Litres" type="newarrival" />
+      </div>
+      <div ref={TopSelling}>
+        <HomeSliders text="10 Litres" type="topselling" />
+      </div>
+      <div ref={OnSale}>
+        <HomeSliders text="25 Litres" type="onsale" />
+      </div>
+
+      <HappyCustomers />
+
       <section ref={journeyRef} className="my-4 px-4 xsm:px-6 md:px-8 max-w-6xl mx-auto w-full mt-20">
         <div className="overflow-hidden rounded-3xl border border-neutral-200 bg-gradient-to-br from-white via-lime-50 to-amber-50 px-6 py-12 shadow-lg dark:border-neutral-800 dark:from-neutral-950 dark:via-emerald-950/30 dark:to-amber-900/20 md:px-10">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 0.55 }}>
@@ -277,18 +289,6 @@ export default function Home({ to = "" }) {
           </motion.ol>
         </div>
       </section>
-
-      <div ref={NewArrival}>
-        <HomeSliders text="5 Litres" type="newarrival" />
-      </div>
-      <div ref={TopSelling}>
-        <HomeSliders text="10 Litres" type="topselling" />
-      </div>
-      <div ref={OnSale}>
-        <HomeSliders text="25 Litres" type="onsale" />
-      </div>
-
-      <HappyCustomers />
     </>
   );
 }
