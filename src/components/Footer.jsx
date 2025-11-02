@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { MdOutlineEmail, MdOutlinePhone } from "react-icons/md";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
@@ -60,7 +61,11 @@ export default function Footer() {
         <div>
           <h4 className="text-sm font-semibold uppercase tracking-wide text-neutral-900 dark:text-neutral-200">Company</h4>
           <ul className="mt-4 space-y-3 text-sm text-neutral-600 dark:text-neutral-300">
-            <li className="hover:underline underline-offset-4 cursor-pointer">About Graferd</li>
+            <li>
+              <Link className="hover:underline underline-offset-4 cursor-pointer" to="/Journey">
+                About Graferd
+              </Link>
+            </li>
             <li className="hover:underline underline-offset-4 cursor-pointer">Sourcing Standards</li>
             <li className="hover:underline underline-offset-4 cursor-pointer">Wholesale Program</li>
             <li className="hover:underline underline-offset-4 cursor-pointer">Careers</li>

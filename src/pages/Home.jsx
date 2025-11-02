@@ -11,6 +11,7 @@ export default function Home({ to = "" }) {
   const NewArrival = useRef();
   const TopSelling = useRef();
   const OnSale = useRef();
+  const journeyRef = useRef();
 
   useEffect(() => {
     if (to === "") {
@@ -33,6 +34,11 @@ export default function Home({ to = "" }) {
     } else if (to === "OnSale") {
       window.scrollTo({
         top: OnSale.current.offsetTop,
+        behavior: "smooth",
+      });
+    } else if (to === "Journey") {
+      window.scrollTo({
+        top: journeyRef.current.offsetTop,
         behavior: "smooth",
       });
     }
@@ -235,7 +241,7 @@ export default function Home({ to = "" }) {
         </div>
       </section>
 
-      <section className="my-4 px-4 xsm:px-6 md:px-8 max-w-6xl mx-auto w-full mt-20">
+      <section ref={journeyRef} className="my-4 px-4 xsm:px-6 md:px-8 max-w-6xl mx-auto w-full mt-20">
         <div className="overflow-hidden rounded-3xl border border-neutral-200 bg-gradient-to-br from-white via-lime-50 to-amber-50 px-6 py-12 shadow-lg dark:border-neutral-800 dark:from-neutral-950 dark:via-emerald-950/30 dark:to-amber-900/20 md:px-10">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 0.55 }}>
             <p className="text-sm uppercase tracking-[0.4em] text-green-700 dark:text-emerald-300">Our Journey</p>

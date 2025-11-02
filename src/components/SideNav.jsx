@@ -37,6 +37,7 @@ export default function SideNav() {
             <li><Link className="hover:underline underline-offset-4 cursor-pointer" to='/NewArrival'>New Arrivals</Link></li>
             <li><Link className="hover:underline underline-offset-4 cursor-pointer" to='/TopSelling'>Top Selling</Link></li>
             <li><Link className="hover:underline underline-offset-4 cursor-pointer" to='/OnSale'>On Sale</Link></li>
+            <li><Link className="hover:underline underline-offset-4 cursor-pointer" to='/Journey'>About Us</Link></li>
           <form className="flex gap-2" onSubmit={handleFormSubmit}>
             <button type="submit">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
