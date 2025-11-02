@@ -92,10 +92,10 @@ export default function Prodcut() {
                 initial={{opacity:0,x:-75}}
                 animate={{opacity:1,x:0}}
                 transition={{delay:0.3}}
-              className='rounded-full select-none	 flex-grow xsm:flex-grow-0 p-3 xsm:p-0 xsm:w-[25%] flex justify-center items-center gap-5 bg-gray-100'>
-                <span onClick={handleQuantityChange(-1)} className='text-4xl -mt-1 cursor-pointer flex-grow text-center'>-</span>
-                <span className='font-bold'>{Quantity}</span>
-                <span onClick={handleQuantityChange(1)} className='text-4xl -mt-1 cursor-pointer flex-grow text-center'>+</span>
+              className='rounded-full select-none	 flex-grow xsm:flex-grow-0 p-3 xsm:p-0 xsm:w-[25%] flex justify-center items-center gap-5 bg-gray-100 dark:bg-neutral-800 border border-transparent dark:border-neutral-700 transition-colors'>
+                <span onClick={handleQuantityChange(-1)} className='text-4xl -mt-1 cursor-pointer flex-grow text-center text-neutral-900 hover:bg-neutral-200/80 rounded-full px-3 py-1 dark:text-neutral-100 dark:hover:bg-neutral-700/60'>-</span>
+                <span className='font-bold text-neutral-900 dark:text-neutral-100'>{Quantity}</span>
+                <span onClick={handleQuantityChange(1)} className='text-4xl -mt-1 cursor-pointer flex-grow text-center text-neutral-900 hover:bg-neutral-200/80 rounded-full px-3 py-1 dark:text-neutral-100 dark:hover:bg-neutral-700/60'>+</span>
               </motion.div>
               <motion.div
                 initial={{opacity:0,x:-75}}
