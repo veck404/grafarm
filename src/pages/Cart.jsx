@@ -21,7 +21,8 @@ export default function Cart() {
 
   const subtotal = Number(Cost || 0);
   const formatCurrency = (amount) => `₦${Number(amount ?? 0).toLocaleString("en-NG")}`;
-  const deliveryFee = 15;
+  const deliveryFee = 0;
+  const deliveryFeeNote = "You'll be notified of the exact fee before dispatch.";
   const total = deliveryFee + subtotal;
 
   const handleCheckout = () => {
@@ -54,7 +55,7 @@ export default function Cart() {
 
     const summaryLines = [
       `Subtotal: ${formatCurrency(subtotal)}`,
-      `Delivery Fee: ${formatCurrency(deliveryFee)}`,
+      `Delivery Fee: ${deliveryFeeNote}`,
       `Total: ${formatCurrency(total)}`
     ].filter(Boolean);
 
@@ -142,9 +143,9 @@ export default function Cart() {
                 <div>Subtotal</div>
                 <div className="font-display text-lg font-bold">{formatCurrency(subtotal)}</div>
               </div>
-              <div className="flex justify-between">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                 <div>Delivery Fee</div>
-                <div className="font-display text-lg font-bold">{formatCurrency(deliveryFee)}</div>
+                <div className="text-sm text-neutral-600 dark:text-neutral-400 sm:text-right">{deliveryFeeNote}</div>
               </div>
               <hr />
               <div className="flex justify-between">
